@@ -9,6 +9,8 @@ import { create } from "@web3-storage/w3up-client";
 import { ethers } from "ethers";
 import WebpageStorageABI from "../WebpageStorage.json";
 import * as Name from "w3name";
+import { JsonRpcProvider } from 'ethers';
+
 
 console.log("ETHEREUM_RPC_URL:", process.env.ETHEREUM_RPC_URL);
 console.log("PRIVATE_KEY:", process.env.PRIVATE_KEY);
@@ -28,7 +30,7 @@ export async function initializeClients(userEmail: string) {
     throw new Error("No spaces available. Please create a space first.");
   }
 
-  const provider = new ethers.JsonRpcProvider(
+  const provider = new ethers.providers.JsonRpcProvider(
     "https://pre-rpc.bt.io/"
   );
   const signer = new ethers.Wallet(
