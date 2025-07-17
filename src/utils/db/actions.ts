@@ -28,7 +28,7 @@ export async function initializeClients(userEmail: string) {
     throw new Error("No spaces available. Please create a space first.");
   }
 
-  const provider = new ethers.providers.JsonRpcProvider(
+  const provider = new ethers.JsonRpcProvider(
     "https://pre-rpc.bt.io/"
   );
   const signer = new ethers.Wallet(
@@ -36,7 +36,7 @@ export async function initializeClients(userEmail: string) {
     provider
   );
   contract = new ethers.Contract(
-    "0x4eEAEB9C96951Fc1BE43f34c42A002B58FB774Ff",
+    "0x0a87D9B8e7d9190736244B70775800d52396AD0B",
     WebpageStorageABI.abi,
     signer
   );
